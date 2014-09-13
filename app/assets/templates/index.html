@@ -1,8 +1,16 @@
 <h1>MUHFUKNINHANGMANYO</h1>
 
+
+
 {{guesses}}
-<div ng-repeat="letter in alphabet" ng-click="clicked(letter)">
 
-	<button ng-show="button" >{{letter}}</button>
+<div class="letter" ng-repeat="letter in alphabet" ng-click="clicked(letter)">
 
+	<button class = "btn" ng-class="{red: $index%2==0, blue : !($index%2==0)};" ng-show="button">{{letter}}</button>
+<!-- <p class="first" style="background-color: purple;">
+	<span class="inside" id="power">inside p1</span>
+</p>
+<p class="second">
+	<span class="inside" id="power">inside p2</span>
+</p> -->
 </div>
