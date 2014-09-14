@@ -7,9 +7,11 @@
 
 <h1>{{guesses}}</h1>
 
-<div class="letter" ng-repeat="letter in alphabet" ng-click="clicked(letter)">
+<div ng-show="keyboard">
+	<div class="letter" ng-repeat="letter in alphabet" ng-click="clicked(letter)">
 
-	<button class = "btn" ng-class="{red: $index%2==0, blue : !($index%2==0)};" ng-show="button">{{letter}}</button>
+	<button class = "btn" ng-show="button">{{letter}}</button>
+	</div>
 </div>
 
 <form action="javascript:void(0);" ng-show="winner" ng-submit="reset()">
@@ -23,7 +25,7 @@
 </form>
 
 
-<svg width="120" height="120"
+<!-- <svg width="120" height="120"
      viewPort="0 0 120 120" version="1.1"
      xmlns="http://www.w3.org/2000/svg">
 
@@ -62,3 +64,4 @@
 		      transform="rotate(-90 20 100)"/>
 
 </svg>
+ -->
