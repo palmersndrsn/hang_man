@@ -10,12 +10,6 @@
 <div class="letter" ng-repeat="letter in alphabet" ng-click="clicked(letter)">
 
 	<button class = "btn" ng-class="{red: $index%2==0, blue : !($index%2==0)};" ng-show="button">{{letter}}</button>
-<!-- <p class="first" style="background-color: purple;">
-	<span class="inside" id="power">inside p1</span>
-</p>
-<p class="second">
-	<span class="inside" id="power">inside p2</span>
-</p> -->
 </div>
 
 <form action="javascript:void(0);" ng-show="winner" ng-submit="reset()">
@@ -28,3 +22,43 @@
 	<button >Restart!</button>
 </form>
 
+
+<svg width="120" height="120"
+     viewPort="0 0 120 120" version="1.1"
+     xmlns="http://www.w3.org/2000/svg">
+
+	  <circle cx="60" cy="60" r="50"
+	  				stroke="black"
+	  				stroke-width="2"/>
+
+    <line x1="0" y1="100"
+		      x2="100" y2="100"
+		      stroke="black"
+		      stroke-width="2"
+		      transform="rotate(-90 20 100)"/>
+
+    <line x1="0" y1="100"
+		      x2="100" y2="100"
+		      stroke="black"
+		      stroke-width="2"
+		      transform="rotate(-45 20 100)"/>
+
+    <line x1="0" y1="100"
+		      x2="100" y2="100"
+		      stroke="black"
+		      stroke-width="2"
+		      transform="rotate(45 20 100)"/>
+
+    <line x1="0" y1="100"
+		      x2="100" y2="100"
+		      stroke="black"
+		      stroke-width="2"
+		      transform="rotate(-90 20 100)"/>
+
+    <line x1="0" y1="100"
+		      x2="100" y2="100"
+		      stroke="black"
+		      stroke-width="2"
+		      transform="rotate(-90 20 100)"/>
+
+</svg>

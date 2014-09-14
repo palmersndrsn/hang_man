@@ -40,7 +40,7 @@ HangManApp.controller "SitesCtrl", ["$scope", "$http", ($scope, $http) ->
 		# need to figure out how to reset the game
 		$scope.init()
 		$scope.enteredWord = ""
-		$scope.button = true
+		$scope.button.all = true
 
 
 	$scope.getWord = ->
