@@ -14,9 +14,6 @@ HangManApp.config ["$routeProvider", "$locationProvider", ($routeProvider, $loca
 
 HangManApp.controller "SitesCtrl", ["$scope", "$http", ($scope, $http) ->
 
-	$scope.count = 0
-	$scope.guesses = 0
-	$scope.letterCount = 0
 
 	$scope.clicked = (letter) ->
 		this.button = false
@@ -27,13 +24,10 @@ HangManApp.controller "SitesCtrl", ["$scope", "$http", ($scope, $http) ->
 			$scope.guesses++
 
 		if $scope.letterCount == $scope.secretWord.length
-			console.log("you win!")
-			# show the user they won
 			$scope.winner = true
 
 		if $scope.guesses == 6
-			alert "DOH!!"
-			#  show the user they lost
+			$scope.loser = true
 
 
 	$scope.letterFound = (letter, index) ->
@@ -44,7 +38,9 @@ HangManApp.controller "SitesCtrl", ["$scope", "$http", ($scope, $http) ->
 
 	$scope.reset = ->
 		# need to figure out how to reset the game
-		console.log("reset")
+		$scope.init()
+		$scope.enteredWord = ""
+		$scope.button = true
 
 
 	$scope.getWord = ->
@@ -53,16 +49,17 @@ HangManApp.controller "SitesCtrl", ["$scope", "$http", ($scope, $http) ->
 		$scope.secretWord = word.split("")
 		$scope.entry = false
 
+	$scope.init = ->
+		$scope.count = 0
+		$scope.guesses = 0
+		$scope.letterCount = 0
+		$scope.winner = false
+		$scope.loser = false
+		$scope.entry = true
+		$scope.wordPopup = true
+		$scope.button = true
 
-	# add this to getWord
+		$scope.alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
- $scope.winner = false
-
-	$scope.entry = true
-
-	$scope.wordPopup = true
-
-	$scope.button = true
-
-	$scope.alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+	$scope.init()
 ]
