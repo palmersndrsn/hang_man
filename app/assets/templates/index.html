@@ -1,8 +1,11 @@
 <h1>MUHFUKNINHANGMANYO</h1>
 
+<form action="javascript:void(0);" ng-submit="getWord()">
+	<input type="text" ng-model="enteredWord">
+	<button >Set Word</button>
+</form>
 
-
-{{guesses}}
+<h1>{{guesses}}</h1>
 
 <div class="letter" ng-repeat="letter in alphabet" ng-click="clicked(letter)">
 
