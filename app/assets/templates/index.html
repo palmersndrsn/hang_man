@@ -1,6 +1,6 @@
 <h1>MUHFUKNINHANGMANYO</h1>
 
-<form action="javascript:void(0);" ng-submit="getWord()">
+<form action="javascript:void(0);" ng-show="entry" ng-submit="getWord()">
 	<input type="text" ng-model="enteredWord">
 	<button >Set Word</button>
 </form>
@@ -17,3 +17,8 @@
 	<span class="inside" id="power">inside p2</span>
 </p> -->
 </div>
+
+<form action="javascript:void(0);" ng-show="winner" ng-submit="reset()">
+	<h1>YOU WIN!!</h1>
+	<button >Restart!</button>
+</form>

@@ -29,12 +29,12 @@ HangManApp.controller "SitesCtrl", ["$scope", "$http", ($scope, $http) ->
 		if $scope.letterCount == $scope.secretWord.length
 			console.log("you win!")
 			# show the user they won
-			$scope.restartGame()
+			$scope.winner = true
 
 		if $scope.guesses == 6
 			alert "DOH!!"
 			#  show the user they lost
-			$scope.restartGame()
+
 
 	$scope.letterFound = (letter, index) ->
 		console.log "found it!"
@@ -42,21 +42,23 @@ HangManApp.controller "SitesCtrl", ["$scope", "$http", ($scope, $http) ->
 		console.log(index)
 		$scope.letterCount++
 
-	$scope.restartGame = ->
+	$scope.reset = ->
 		# need to figure out how to reset the game
-
+		console.log("reset")
 
 
 	$scope.getWord = ->
 		# user inputs word and
 		word = $scope.enteredWord.toUpperCase()
 		$scope.secretWord = word.split("")
+		$scope.entry = false
 
 
-		$scope.wordPopup = false
 	# add this to getWord
 
+ $scope.winner = false
 
+	$scope.entry = true
 
 	$scope.wordPopup = true
 
