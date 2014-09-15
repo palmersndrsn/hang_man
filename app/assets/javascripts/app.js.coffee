@@ -74,6 +74,13 @@ HangManApp.controller "SitesCtrl", ["$scope", "$http", ($scope, $http) ->
 		# this isn't working, why is that?
 		$scope.button = true
 
+		$scope.head = false
+		$scope.body = false
+		$scope.leftArm = false
+		$scope.rightArm = false
+		$scope.leftLeg = false
+		$scope.rightLeg = false
+
 		$scope.alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
 	$scope.init()
