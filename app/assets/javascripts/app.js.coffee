@@ -19,25 +19,33 @@ HangManApp.controller "SitesCtrl", ["$scope", "$http", ($scope, $http) ->
 	$scope.clicked = (letter) ->
 		this.button = false
 		clickedArr.push(letter)
-		console.log(clickedArr)
-		console.log(letter)
 		if letter in $scope.secretWord
 			$scope.letterFound(letter, $scope.secretWord.indexOf(letter))
 		else
 			$scope.guesses++
-
+			$scope.hanging()
 		if $scope.letterCount == $scope.secretWord.length
 			$scope.winner = true
-
+			$scope.keyboard = false
 		if $scope.guesses == 6
 			$scope.loser = true
+			$scope.keyboard = false
 
-
+	$scope.hanging = ->
+		if $scope.guesses == 1
+			$scope.head = true
+		else if $scope.guesses == 2
+			$scope.body = true
+		else if $scope.guesses == 3
+			$scope.leftArm = true
+		else if $scope.guesses == 4
+			$scope.rightArm = true
+		else if $scope.guesses == 5
+			$scope.rightLeg = true
+		else if $scope.guesses == 6
+			$scope.leftLeg = true
 
 	$scope.letterFound = (letter, index) ->
-		console.log "found it!"
-		console.log(letter)
-		console.log(index)
 		$scope.letterCount++
 
 	$scope.reset = ->
@@ -50,6 +58,7 @@ HangManApp.controller "SitesCtrl", ["$scope", "$http", ($scope, $http) ->
 		$scope.secretWord = word.split("")
 		$scope.entry = false
 		$scope.keyboard = true
+
 
 
 	$scope.init = ->
