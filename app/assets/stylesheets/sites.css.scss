@@ -2,9 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#_title {
+	text-align: center;
+}
+
 .letter {
 	display: inline-block;
-
 }
 
 .btn {
@@ -13,6 +16,13 @@
 	border-radius: 3px;
 	margin: 2px;
 }
+
+.keyboard {
+	margin: auto 0;
+	text-align: center;
+	width: 400px;
+}
+
 
 // .btn:hover {
 // 	background-color: red;

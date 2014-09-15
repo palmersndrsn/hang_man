@@ -33,6 +33,7 @@ HangManApp.controller "SitesCtrl", ["$scope", "$http", ($scope, $http) ->
 			$scope.loser = true
 
 
+
 	$scope.letterFound = (letter, index) ->
 		console.log "found it!"
 		console.log(letter)
@@ -40,14 +41,11 @@ HangManApp.controller "SitesCtrl", ["$scope", "$http", ($scope, $http) ->
 		$scope.letterCount++
 
 	$scope.reset = ->
-		# need to figure out how to reset the game
 		$scope.enteredWord = ""
 		$scope.button.all = true
-		$scope.alphabet = []
 		$scope.init()
 
 	$scope.getWord = ->
-		# user inputs word and
 		word = $scope.enteredWord.toUpperCase()
 		$scope.secretWord = word.split("")
 		$scope.entry = false
@@ -64,6 +62,8 @@ HangManApp.controller "SitesCtrl", ["$scope", "$http", ($scope, $http) ->
 		$scope.wordPopup = true
 		$scope.button = true
 		$scope.keyboard = false
+		# this isn't working, why is that?
+		$scope.button = true
 
 		$scope.alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
